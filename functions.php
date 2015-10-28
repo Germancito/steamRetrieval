@@ -89,6 +89,14 @@ try{
 
 	function showFriends($steamID)
 	{
+
+
+	/*
+	@this function will retrieve the users friends list from steam
+	@then it will compare it to our tables. if the friend is in the database
+	@it will pull it from there and display it
+	@otherwise it will add it to the database then pull it.
+	*/
 	$apikey1="238E8D6B70BF7499EE36312EF39F91AA";
 		$pushFriends="http://api.steampowered.com/ISteamUser/GetFriendList/v0001/?key=$apikey1&steamid=$steamID&relationship=friend";
 		//echo "addFriends initialized";
@@ -104,7 +112,7 @@ try{
 		    		exit;
 			}
 					
-			 $i=0;
+			 //$i=0;
 			 $friendArray=array();
 			 
 		foreach($json_decode->friendslist->friends as $friend)
@@ -136,10 +144,10 @@ try{
 				$fName=$row_name["name"];
 				array_push($friendArray,$avatar,$fName);
 				
-				echo "<img src=$avatar>";
-				echo "\r\n";
-				echo $fName;
-				echo "<br>";
+				//echo "<img src=$avatar>";
+				//echo "\r\n";
+				//echo $fName;
+				//echo "<br>";
 
 			}
 			else{
