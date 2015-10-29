@@ -1,3 +1,4 @@
+
 <?php
 # Logging in with Steam accounts requires setting special identity, so this example shows how to do it.
 # http://steamcommunity.com/dev/
@@ -13,13 +14,14 @@ try {
 
   
    
-   
+ /*  
  $openid = new LightOpenID('localhost');
     if(!$openid->mode) {
         if(isset($_GET['login'])) {
             $openid->identity = 'http://steamcommunity.com/openid';
             header('Location: ' . $openid->authUrl());
         }
+*/
 ?>
 <h1>Hey ____ thank you for using FOF.com</h1>
 
@@ -36,7 +38,8 @@ try {
     <input type="image" src="http://cdn.steamcommunity.com/public/images/signinthroughsteam/sits_large_border.png">
 </form>
 <?php
-    } elseif($openid->mode == 'cancel') {
+/*    
+} elseif($openid->mode == 'cancel') {
         echo 'User has canceled authentication!';
     } else {
         if($openid->validate()) {
@@ -53,6 +56,7 @@ try {
         }
 
     }
+*/
 } catch(ErrorException $e) {
     echo $e->getMessage();
 }
